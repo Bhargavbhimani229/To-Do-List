@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List - Edit Task</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5 w-75">
+        <div class="card shadow-lg p-4">
+            <!-- Header Section -->
+            <h1 class="text-center mb-4">Edit Task</h1>
+
+            <!-- Form for Editing Task -->
+            <form action="/edit" method="POST">
+                <div class="mb-3">
+                    <!-- Hidden input to store task ID -->
+                    <input type="hidden" value="<%= task.id %>" name="id">
+
+                    <!-- Input field for task editing -->
+                    <input type="text" name="task" class="form-control" value="<%= task.task %>" placeholder="Edit your task" required>
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-success w-100">Update Task</button>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Optional, if needed) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
